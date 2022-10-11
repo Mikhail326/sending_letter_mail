@@ -7,7 +7,51 @@
 
 <body>
 
-  <h1>hello</h1>
+  <div class="form">
+    <form action="#" id="form" class="form__body">
+      <div class="form__title">
+        <h1>Отправка данных на почту</h1>
+      </div>
+      <div class="form__item">
+        <label for="formName" class="form__label">Имя*: </label>
+        <input type="text" id="formName" class="form__input" name="name">
+      </div>
+      <div class="form__item">
+        <label for="formEmail" class="form__label">Email*: </label>
+        <input type="text" id="formEmail" class="form__input" name="email">
+      </div>
+      <div class="options">
+        <div class="options__item">
+          <input type="radio" id="formRightHanded" class="options__input" name="hand">
+          <label for="formRightHanded" class="options__label">Правша</label>
+        </div>
+        <div class="options__item">
+          <input type="radio" id="formLeftHanded" class="options__input" name="hand">
+          <label for="formLeftHanded" class="options__label">Левша</label>
+        </div>
+      </div>
+      <div class="form__item">
+        <label for="formMessage" class="form__label">Сообщение: </label>
+        <textarea id="formMessage" class="form__input" name="message"></textarea>
+      </div>
+      <div class="form__item">
+        <div class="form__label">Возраст: </label>
+          <select class="form__select" name="age">
+            <option value="от 0 до 18">Молодой</option>
+            <option value="от 19 до 45">Средний</option>
+            <option value="от 46">Старый</option>
+          </select>
+        </div>
+      </div>
+      <div class="form__item">
+        <div class="form__label">Прикрепить файл</div>
+        <div class="form__file">
+          <input accept=".jpg, .png, .gif" type="file" name="file" id="formFile" class="file__input">
+        </div>
+      </div>
+    </form>
+  </div>
+
   @@include('./utils/includies.html')
 
 </body>
