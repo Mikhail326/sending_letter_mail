@@ -36,7 +36,7 @@
       </div>
       <div class="form__item">
         <div class="form__label">Возраст: </label>
-          <select class="form__select" name="age">
+          <select class="select" name="age">
             <option value="от 0 до 18">Молодой</option>
             <option value="от 19 до 45">Средний</option>
             <option value="от 46">Старый</option>
@@ -45,8 +45,17 @@
       </div>
       <div class="form__item">
         <div class="form__label">Прикрепить файл</div>
-        <div class="form__file">
+        <div class="file">
           <input accept=".jpg, .png, .gif" type="file" name="file" id="formFile" class="file__input">
+          <div class="file__button">Выбрать</div>
+          <div class="file__preview"></div>
+        </div>
+      </div>
+      <div class="form__item">
+        <div class="checkbox">
+          <input type="checkbox" id="formCheckbox" name="checkbox" class="form__input">
+          <label for="formCheckbox" class="form__label"><span>я согласен на обработку персональных данных в соответствии
+              с <a href="#">Условиями</a></span></label>
         </div>
       </div>
     </form>
