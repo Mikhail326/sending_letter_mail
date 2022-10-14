@@ -20,14 +20,17 @@
         <label for="formEmail" class="form__label">Email*: </label>
         <input type="text" id="formEmail" class="form__input" name="email">
       </div>
-      <div class="options">
-        <div class="options__item">
-          <input type="radio" id="formRightHanded" class="options__input" name="hand">
-          <label for="formRightHanded" class="options__label">Правша</label>
-        </div>
-        <div class="options__item">
-          <input type="radio" id="formLeftHanded" class="options__input" name="hand">
-          <label for="formLeftHanded" class="options__label">Левша</label>
+      <div class="form__item">
+        <div class="form__label">правша или левша?</div>
+        <div class="options">
+          <div class="options__item">
+            <input type="radio" id="formRightHanded" class="options__input" name="hand">
+            <label for="formRightHanded" class="options__label">Правша</label>
+          </div>
+          <div class="options__item">
+            <input type="radio" id="formLeftHanded" class="options__input" name="hand">
+            <label for="formLeftHanded" class="options__label">Левша</label>
+          </div>
         </div>
       </div>
       <div class="form__item">
@@ -57,6 +60,9 @@
           <label for="formCheckbox" class="form__label"><span>я согласен на обработку персональных данных в соответствии
               с <a href="#">Условиями</a></span></label>
         </div>
+      </div>
+      <div class="form__item">
+        <button type="submit" class="form__submit" name="submit">Отправить</button>
       </div>
     </form>
   </div>
