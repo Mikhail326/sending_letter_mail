@@ -21,15 +21,15 @@
         <input type="text" id="formEmail" class="form__input" name="email">
       </div>
       <div class="form__item">
-        <div class="form__label">правша или левша?</div>
+        <div class="form__label">Пол:</div>
         <div class="options">
           <div class="options__item">
-            <input type="radio" id="formRightHanded" class="options__input" name="hand">
-            <label for="formRightHanded" class="options__label">Правша</label>
+            <input type="radio" id="formGenderMale" class="options__input" name="gender">
+            <label for="formGenderMale" class="options__label">Мужской</label>
           </div>
           <div class="options__item">
-            <input type="radio" id="formLeftHanded" class="options__input" name="hand">
-            <label for="formLeftHanded" class="options__label">Левша</label>
+            <input type="radio" id="formGenderFemale" class="options__input" name="gender">
+            <label for="formGenderFemale" class="options__label">Женский</label>
           </div>
         </div>
       </div>
@@ -38,27 +38,28 @@
         <textarea id="formMessage" class="form__input" name="message"></textarea>
       </div>
       <div class="form__item">
-        <div class="form__label">Возраст: </label>
-          <select class="select" name="age">
-            <option value="от 0 до 18">Молодой</option>
-            <option value="от 19 до 45">Средний</option>
-            <option value="от 46">Старый</option>
-          </select>
-        </div>
+        <div class="form__label">Возраст: </div>
+        <select class="select" name="age">
+          <option value="от 0 до 18">Молодой</option>
+          <option value="от 19 до 45">Средний</option>
+          <option value="от 46">Старый</option>
+        </select>
       </div>
       <div class="form__item">
         <div class="form__label">Прикрепить файл</div>
         <div class="file">
-          <input accept=".jpg, .png, .gif" type="file" name="file" id="formFile" class="file__input">
-          <div class="file__button">Выбрать</div>
+          <div class="file__item">
+            <input accept=".jpg, .png, .gif" type="file" name="file" id="formFile" class="file__input">
+            <div class="file__button">Выбрать</div>
+          </div>
           <div class="file__preview"></div>
         </div>
       </div>
       <div class="form__item">
         <div class="checkbox">
-          <input type="checkbox" id="formCheckbox" name="checkbox" class="form__input">
-          <label for="formCheckbox" class="form__label"><span>я согласен на обработку персональных данных в соответствии
-              с <a href="#">Условиями</a></span></label>
+          <input type="checkbox" id="formCheckbox" name="checkbox" class="checkbox__input">
+          <label for="formCheckbox" class="checkbox__label"><span>я согласен на обработку персональных данных в соответствии
+              с <a href="#">Условиями</a></span> *</label>
         </div>
       </div>
       <div class="form__item">
