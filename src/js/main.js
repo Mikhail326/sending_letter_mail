@@ -1,3 +1,4 @@
+const body = document.querySelector('body')
 const form = document.querySelector('#form')
 const formReq = document.querySelectorAll('._req')
 const fileImage = document.querySelector('#formFile')
@@ -47,8 +48,27 @@ const formSend = (e) => {
     e.preventDefault()
 
     const error = formValidate(form)
+    const formData = new FormData(form)
+    formData.append('image', fileImage.files[0])
+
     if (error !== 0) {
         alert('Заполните все обязательные поля!')
+    } else {
+        body.classList.add('_sending')
+        let response = fetch('sendform.php', {
+            method: 'POST',
+            body: formData
+        })
+        if(response.ok) {
+            let result = response.json()
+            alert(result.message)
+            previewImage.innerHTML = ''
+            form.reset()
+            body.classList.remove('_sending')
+        } else {
+            alert('Ошибка')
+            body.classList.add('_sending')
+        }
     }
 }
 
