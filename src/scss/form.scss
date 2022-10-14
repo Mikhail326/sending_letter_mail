@@ -3,6 +3,10 @@
     margin: 1rem auto;
     color: white;
 
+    & ._error {
+        color: red;
+    }
+    
     &__body {
         padding: 2rem;
     }
@@ -18,6 +22,10 @@
         gap: 1rem;
         flex-direction: column;
         margin-bottom: 1rem;
+
+        & ._error {
+            border: 2px solid red;
+        }
     }
 
     &__input {
@@ -94,6 +102,9 @@
         &__input {
             width: 20px;
             height: 20px;
+            & ._error {
+                border: 2px solid red;
+            }
         }
 
         &__label {
@@ -113,7 +124,7 @@
         box-shadow: 0 5px 0 #1b2118;
         font-size: 18px;
         font-weight: 700;
-transition: 0.5s;
+        transition: 0.5s;
 
         &:hover {
             background-color: #5b7649;
