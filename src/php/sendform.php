@@ -1,48 +1,47 @@
 <?php 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+ use PHPMailer\PHPMailer\PHPMailer;
+ use PHPMailer\PHPMailer\Exception;
+ 
+ require "phpmailer/src/Exception.php";
+ require "phpmailer/src/PHPMailer.php";
+ 
+  $mail = new PHPMailer(true);
+  $mail->CharSet = "UTF-8";
+//   $mail->addAttachment($_FILES['file']['tmp_name'], $_FILES['file']['name']);
 
-require 'vendors/phpmailer/src/Exception.php';
-require 'vendors/phpmailer/src/PHPMailer.php';
+  $name = $_POST["name"];
+  $email = $_POST["email"];
+  $gender = "Мужской";
+  if($_POST['gender'] === 'female') {
+    $gender = "Женский";
+  };
+  $messageForm = $_post['message'];
+  $age = $_POST['age'];
+ 
+  $body = "<p><strong>Имя:</strong> $name </p>
+           <p><strong>Почта:</strong> $email </p>
+           <p><strong>Пол:</strong> $gender </p>
+           <p><strong>Возраст:</strong> $age </p>
+           <p><strong>Сообщение:</strong> $messageForm </p>
+  ";
 
-$mail = new PHPMailer(true);
-$mail->CharSet = 'UTF-8';
-$mail->setLanguage('ru', 'vendors/phpmailer/language/');
-$mail->IsHTML(true);
+  $theme = "Заявка с формы";
 
-// От кого письмо
-$mail->setForm('info@fls.guru', 'От кого письмо');
-// Кому отправляем
-$mail->addAddress('misha-stelmakh@yandex.ru');
-// Тема письма
-$mail->Subject = 'Тема письма!';
+  $mail->isHTML(true);  
+  $mail->setFrom($email, $name);
+  $mail->addAddress("misha-stelmakh@yandex.ru");
 
-// Пол
-$gender = 'Мужчина';
-if($_POST['gender'] == 'femail') {
-    $gender = 'Женщина';
-};
+  $mail->Subject = $theme;
+  $mail->Body = $body;
+ 
+  if(!$mail->send()) {
+    $message = 'Сообщение не отправлено!!!';
+  } else {
+    $message = 'Message has been sent';
+  };
+  
+  $response = ["message" => $message];
+  header('Content-type: application/json');
 
-// Тело письма
-$body = '<h1>Заголовок тела письма</h1>';
-
-if(trim(!empty($_POST['name'])) {
-    $_body.= '<p><strong>Имя: </strong> '.$_POST['name'].'</p>';
-};
-
-
-// -----------
-$mail->Body = $body;
-
-if(!$mail->send()) {
-    $message = 'Oшибка';
-} else {
-    $message = 'Данные отправлены';
-}
-
-$response = ['message' => $message];
-
-header('Content-type: application/json');
-echo json_encode($response);
-
-?>
+  echo json_encode($response);
+ ?>

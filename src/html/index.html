@@ -8,7 +8,7 @@
 <body>
 
   <div class="form">
-    <form action="#" id="form" class="form__body _sending">
+    <form action="sendform.php" method="POST" id="form" class="form__body _sending" enctype="multipart/form-data">
       <div class="form__title">
         <h1>Отправка данных на почту</h1>
       </div>
@@ -24,11 +24,11 @@
         <div class="form__label">Пол:</div>
         <div class="options">
           <div class="options__item">
-            <input type="radio" id="formGenderMale" class="options__input" name="gender">
+            <input type="radio" id="formGenderMale" class="options__input" value="male" name="gender">
             <label for="formGenderMale" class="options__label">Мужской</label>
           </div>
           <div class="options__item">
-            <input type="radio" id="formGenderFemale" class="options__input" name="gender">
+            <input type="radio" id="formGenderFemale" class="options__input" value="female" name="gender">
             <label for="formGenderFemale" class="options__label">Женский</label>
           </div>
         </div>

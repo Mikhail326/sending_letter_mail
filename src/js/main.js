@@ -44,7 +44,7 @@ const removeClassError = (input) => {
     input.classList.remove('_error')
 }
 
-const formSend = (e) => {
+const formSend = async (e) => {
     e.preventDefault()
 
     const error = formValidate(form)
@@ -55,7 +55,7 @@ const formSend = (e) => {
         alert('Заполните все обязательные поля!')
     } else {
         body.classList.add('_sending')
-        let response = fetch('sendform.php', {
+        let response = await fetch('sendform.php', {
             method: 'POST',
             body: formData
         })
