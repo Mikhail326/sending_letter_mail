@@ -61,7 +61,7 @@ const formSend = async (e) => {
         })
         if(response.ok) {
             let result = response.json()
-            alert(result.message)
+            alert('Сообщение отправлено!!!')
             previewImage.innerHTML = ''
             form.reset()
             body.classList.remove('_sending')

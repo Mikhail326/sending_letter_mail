@@ -7,7 +7,7 @@
  
   $mail = new PHPMailer(true);
   $mail->CharSet = "UTF-8";
-//   $mail->addAttachment($_FILES['file']['tmp_name'], $_FILES['file']['name']);
+  
 
   $name = $_POST["name"];
   $email = $_POST["email"];
@@ -15,9 +15,12 @@
   if($_POST['gender'] === 'female') {
     $gender = "Женский";
   };
-  $messageForm = $_post['message'];
+  $messageForm = $_POST['message'];
   $age = $_POST['age'];
- 
+  if(!empty($_FILES['file']['tmp_name'])) {
+    $mail->addAttachment($_FILES['file']['tmp_name'], $_FILES['file']['name']);
+  }
+
   $body = "<p><strong>Имя:</strong> $name </p>
            <p><strong>Почта:</strong> $email </p>
            <p><strong>Пол:</strong> $gender </p>
